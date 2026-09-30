@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolución GLP-1 en el Fast Food & QSR</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans min-h-screen antialiased selection:bg-brand-500 selection:text-white">
+
+  <nav class="sticky top-0 z-50 glass-panel px-4 lg:px-8 py-3.5 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-teal-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-brand-500/30">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+            Análisis de Tendencia 2026
+          </span>
+          <h1 class="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">QSR & The GLP-1 Revolution</h1>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links con Estilo 3D -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#macro" class="px-4 py-2 rounded-xl text-sm font-bold text-yellow-950 bg-gradient-to-b from-yellow-300 to-yellow-500 shadow-[0_4px_0_#a16207,0_5px_10px_rgba(0,0,0,0.15)] hover:translate-y-[2px] hover:shadow-[0_2px_0_#a16207,0_3px_5px_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none transition-all">Impacto Macro</a>
+        <a href="#reference" class="px-4 py-2 rounded-xl text-sm font-bold text-white bg-gradient-to-b from-rose-400 to-rose-600 shadow-[0_4px_0_#9f1239,0_5px_10px_rgba(0,0,0,0.15)] hover:translate-y-[2px] hover:shadow-[0_2px_0_#9f1239,0_3px_5px_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none transition-all">Ref. Proteica</a>
+        <a href="#brands" class="px-4 py-2 rounded-xl text-sm font-bold text-white bg-gradient-to-b from-blue-400 to-blue-600 shadow-[0_4px_0_#1d4ed8,0_5px_10px_rgba(0,0,0,0.15)] hover:translate-y-[2px] hover:shadow-[0_2px_0_#1d4ed8,0_3px_5px_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none transition-all">Estrategias</a>
+        <a href="#quadrant" class="px-4 py-2 rounded-xl text-sm font-bold text-white bg-gradient-to-b from-purple-400 to-purple-600 shadow-[0_4px_0_#6b21a8,0_5px_10px_rgba(0,0,0,0.15)] hover:translate-y-[2px] hover:shadow-[0_2px_0_#6b21a8,0_3px_5px_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none transition-all">Arquetipos</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden pt-8 pb-8 px-4 lg:px-8 border-b border-slate-200 bg-white">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.1),rgba(255,255,255,0))]"></div>
+    
+    <div class="relative max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-brand-50 border border-brand-200 text-brand-700 mb-3">
+          <span class="px-1.5 py-0.5 rounded bg-brand-100 text-brand-800 text-[10px] font-black uppercase">Fenómeno Ozempic / Mounjaro</span>
+          De la Comida Gigante a la Densidad Nutricional
+        </div>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+          La Nueva Era del <span class="bg-gradient-to-r from-brand-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">GLP-1</span> y la Hiperproteína
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
+          Los medicamentos análogos de GLP-1 reducen drásticamente el apetito y vacían el estómago más lento. El comensal ya no busca combos gigantes: exige <strong>máxima proteína por bocado</strong> para no perder masa muscular, <strong>porciones compactas</strong> y bebidas con <strong>cero azúcar</strong>.
+        </p>
+      </div>
+
+      <!-- Live Macro KPI Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 max-w-5xl">
+        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl shadow-sm">
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-bold">Usuarios Proyectados (2030)</div>
+          <div class="text-2xl sm:text-3xl font-black text-brand-600 mt-1">135M–150M</div>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Impacto masivo global en hábitos alimenticios diarios.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl shadow-sm">
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-bold">Reducción Ingesta Calórica</div>
+          <div class="text-2xl sm:text-3xl font-black text-cyan-600 mt-1">-30% a -40%</div>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Caída en ventas de combos grandes y frituras.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl shadow-sm">
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-bold">Objetivo Proteico Crítico</div>
+          <div class="text-2xl sm:text-3xl font-black text-violet-600 mt-1">1.2 – 1.6 g/kg</div>
+          <p class="text-xs text-slate-600 mt-1 font-medium">Consumo diario sugerido para frenar la pérdida de masa muscular.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="reference" class="py-8 px-4 lg:px-8 max-w-7xl mx-auto">
+    <div class="mb-6 text-center max-w-2xl mx-auto">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-600">Guía Nutricional Visual</h3>
+      <h4 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Referencia Proteica QSR</h4>
+      <p class="text-slate-600 text-sm mt-1.5 font-medium">Cómo se ve la transición de volumen a densidad en un plato y los aportes reales de los ingredientes principales.</p>
+    </div>
+
+    <!-- Ejemplo: El caso de la hamburguesa -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-5 md:p-6 shadow-sm mb-6">
+      <h5 class="text-lg font-bold text-slate-900 mb-5 text-center">El Caso de la Hamburguesa: Antes vs. GLP-1 Friendly</h5>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+        <!-- Tradicional -->
+        <div class="flex flex-col items-center p-5 bg-red-50 rounded-2xl border border-red-100 relative">
+          <span class="absolute top-3 left-3 px-2 py-1 bg-red-100 text-red-700 text-[10px] font-bold uppercase rounded">Modelo Antiguo (Volumen)</span>
+          <div class="text-6xl mb-3">🍔🍟🥤</div>
+          <h6 class="font-bold text-slate-900 text-lg">Combo Gigante Clásico</h6>
+          <p class="text-sm text-slate-600 text-center mt-1.5 font-medium">Pan grande, porción extra de papas fritas y refresco azucarado.</p>
+          <div class="mt-3 w-full bg-white p-3 rounded-xl border border-red-100">
+            <div class="flex justify-between text-sm mb-1"><span class="text-slate-500 font-medium">Calorías</span><span class="font-bold text-slate-900">1,200+ kcal</span></div>
+            <div class="flex justify-between text-sm mb-1"><span class="text-slate-500 font-medium">Proteína</span><span class="font-bold text-slate-900">25g</span></div>
+            <div class="text-xs text-red-600 font-bold mt-2 text-center">❌ Genera llenura rápida y náuseas</div>
+          </div>
+        </div>
+
+        <!-- GLP-1 Friendly -->
+        <div class="flex flex-col items-center p-5 bg-brand-50 rounded-2xl border border-brand-100 relative">
+          <span class="absolute top-3 left-3 px-2 py-1 bg-brand-100 text-brand-700 text-[10px] font-bold uppercase rounded">Modelo GLP-1 (Densidad)</span>
+          <div class="text-6xl mb-3">🥩🥬🥑</div>
+          <h6 class="font-bold text-slate-900 text-lg">Doble Carne "Bunless"</h6>
+          <p class="text-sm text-slate-600 text-center mt-1.5 font-medium">Doble proteína magra, envuelta en lechuga, aguacate y agua/té.</p>
+          <div class="mt-3 w-full bg-white p-3 rounded-xl border border-brand-100">
+            <div class="flex justify-between text-sm mb-1"><span class="text-slate-500 font-medium">Calorías</span><span class="font-bold text-slate-900">450 kcal</span></div>
+            <div class="flex justify-between text-sm mb-1"><span class="text-slate-500 font-medium">Proteína</span><span class="font-bold text-brand-600 text-lg">45g+</span></div>
+            <div class="text-xs text-brand-600 font-bold mt-2 text-center">✅ Maximiza masa muscular, fácil digestión</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guía de Gramos por Ingrediente -->
+    <h5 class="text-md font-bold text-slate-900 mb-3 px-2">Aporte Proteico Estándar en la Industria</h5>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div class="bg-white border border-slate-200 p-3 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-1.5">🥩</div>
+        <div class="font-black text-lg text-slate-900">19g</div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase mt-0.5">Carne de Hamburguesa</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">125g</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-1.5">🍗</div>
+        <div class="font-black text-lg text-slate-900">28g</div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase mt-0.5">Pechuga Pollo</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">145g</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-1.5">🥓</div>
+        <div class="font-black text-lg text-slate-900">3.64g</div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase mt-0.5">Tocineta</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">25g</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-1.5">🥚</div>
+        <div class="font-black text-lg text-slate-900">6.8g</div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase mt-0.5">Huevo</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">1 unid.</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-3xl mb-1.5">🧀</div>
+        <div class="font-black text-lg text-slate-900">5.7g</div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase mt-0.5">Mozzarella</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">25g</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="macro" class="py-8 px-4 lg:px-8 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-6 text-center max-w-2xl mx-auto">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-brand-600">Fisiología & Economía QSR</h3>
+        <h4 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">¿Por qué la industria está forzada a cambiar?</h4>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <!-- Card 1: Fisiología -->
+        <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h5 class="text-lg font-bold text-slate-900">Efecto Biológico en el Comensal</h5>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 font-medium">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-500 font-bold mt-0.5">✓</span>
+              <span><strong>Vaciado gástrico lento:</strong> Platos muy grasos o panes grandes causan pesadez.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-500 font-bold mt-0.5">✓</span>
+              <span><strong>Extinción de antojos:</strong> Bebidas azucaradas caen drásticamente en consumo.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-500 font-bold mt-0.5">✓</span>
+              <span><strong>Riesgo de pérdida muscular:</strong> Se exige un alto gramaje de proteína por comida.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Reingeniería -->
+        <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h5 class="text-lg font-bold text-slate-900">Reingeniería del Modelo de Negocio</h5>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 font-medium">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+              <span><strong>Del "Super-Size" al "Micro-Portion":</strong> Ej: <em>Burger King</em> con Sliders y <em>Nestlé</em> con comidas compactas para mantener precio premium.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+              <span><strong>Bebidas como fuente de proteína:</strong> Ej: <em>Juan Valdez</em> integra proteína Whey a sus cafés helados.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+              <span><strong>Bowlificación y "Bunless":</strong> Ej: <em>Chipotle</em> y <em>McDonald's</em> facilitan pedir sin pan o sin arroz.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" class="py-8 px-4 lg:px-8 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-6 text-center">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Mapeo de la Industria</span>
+        <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Estrategias por Cadena</h3>
+        <p class="text-slate-600 text-sm mt-1.5 max-w-2xl mx-auto font-medium">
+          Cómo cada marca adapta su menú. Selecciona la pestaña en cada tarjeta para ver la oferta operativa detallada.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <!-- BRAND: CHIPOTLE -->
+        <div class="brand-card bg-white rounded-xl border border-red-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">Chipotle</h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-red-100 text-red-800 text-[10px] font-bold">Fast Casual</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Pionero en estrategia Dual: GLP-1 + Fitness. Evitó estigmatizar creando la categoría "High Protein".</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-red-600">36–46g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Prot. / Bowl</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-red-50 border-y border-red-100 text-xs font-bold text-red-700 hover:bg-red-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-red-100">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• <strong>High Protein Low Cal Bowl:</strong> Pollo adobo, lechuga, vegetales y guacamole (sin arroz).</li>
+                <li>• <strong>High Fiber Power Bowl:</strong> Pollo, frijoles negros, verduras (14g fibra).</li>
+              </ul>
+              <div class="p-2.5 rounded bg-red-50 border border-red-100 text-[10px] text-red-800 italic font-medium leading-snug">
+                "Fórmula PFF (Protein + Fat + Fiber). Nutrición densa que mantiene saciedad."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAND: MCDONALDS -->
+        <div class="brand-card bg-white rounded-xl border border-amber-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">McDonald's</h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">QSR Global</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Frente a la caída de combos, promueven opciones a la carta y personalización "sin pan" desde kioscos.</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-amber-600">44g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Dbl QP Bunless</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-amber-50 border-y border-amber-100 text-xs font-bold text-amber-700 hover:bg-amber-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-amber-100">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• <strong>Double Quarter Pounder "No Bun":</strong> Servida en lechuga o cajita, baja en carbos.</li>
+                <li>• <strong>Snack Wraps:</strong> Retorno de porciones reducidas ideales para estómagos pequeños.</li>
+              </ul>
+              <div class="p-2.5 rounded bg-amber-50 border border-amber-100 text-[10px] text-amber-800 italic font-medium leading-snug">
+                "Personaliza a tu medida en la app y maximiza la carne magra según apetito."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAND: BURGER KING -->
+        <div class="brand-card bg-white rounded-xl border border-orange-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">Burger King</h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-orange-100 text-orange-800 text-[10px] font-bold">QSR Global</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Desarrollan menús de porciones reducidas y recetas proteicas al carbón para evitar llenura temprana.</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-orange-600">30–50g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Whopper Bunless</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-orange-50 border-y border-orange-100 text-xs font-bold text-orange-700 hover:bg-orange-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-orange-100">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• <strong>King Size Sliders:</strong> Mini-hamburguesas para un control total de la porción.</li>
+                <li>• <strong>Flame-Grilled Bunless:</strong> Carne magra a la parrilla en bowl.</li>
+              </ul>
+              <div class="p-2.5 rounded bg-orange-50 border border-orange-100 text-[10px] text-orange-800 italic font-medium leading-snug">
+                "Disminución intencional del tamaño para proteger márgenes."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAND: JUAN VALDEZ -->
+        <div class="brand-card bg-white rounded-xl border border-stone-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">Juan Valdez</h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-stone-100 text-stone-800 text-[10px] font-bold">Café / Bebidas</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Líderes en integrar proteína Whey al café, respondiendo a la dificultad de consumir sólidos.</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-stone-600">20g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Whey / Frappé</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-stone-50 border-y border-stone-200 text-xs font-bold text-stone-700 hover:bg-stone-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-stone-200">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• <strong>Frappé de Café con Proteína:</strong> Café de origen + 20g de proteína Whey vainilla, sin azúcar.</li>
+              </ul>
+              <div class="p-2.5 rounded bg-stone-50 border border-stone-200 text-[10px] text-stone-800 italic font-medium leading-snug">
+                "Nutrición de conveniencia y energía limpia sin ocupar volumen gástrico."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAND: SMOOTHIE KING -->
+        <div class="brand-card bg-white rounded-xl border border-rose-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">Smoothie King</h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 text-[10px] font-bold">Clínico</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Primera cadena en lanzar un "GLP-1 Support Menu" oficial, abordando el déficit del paciente.</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-rose-600">45–61g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Gladiator Drink</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-rose-50 border-y border-rose-100 text-xs font-bold text-rose-700 hover:bg-rose-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-rose-100">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• <strong>Gladiator GLP-1:</strong> 45g a 61g de proteína aislada con verduras verdes.</li>
+                <li>• <strong>Slim-N-Trim GLP-1:</strong> Alto en fibra soluble, 0g azúcar añadida.</li>
+              </ul>
+              <div class="p-2.5 rounded bg-rose-50 border border-rose-100 text-[10px] text-rose-800 italic font-medium leading-snug">
+                "Nutrición líquida explícitamente diseñada para proteger músculo."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAND: NESTLE -->
+        <div class="brand-card bg-white rounded-xl border border-blue-200 shadow-sm flex flex-col overflow-hidden">
+          <div class="p-4 pb-3 relative z-10">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2.5">
+                <h4 class="text-base font-black text-slate-900">Nestlé <span class="text-xs font-normal text-slate-500">(Vital)</span></h4>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold">Retail / CPG</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mb-2 font-medium leading-tight">Creó una marca (Vital Pursuit) con comidas congeladas súper compactas y fortificadas.</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-blue-600">20–30g</span>
+              <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wide">Porción Mini</span>
+            </div>
+          </div>
+          
+          <button class="w-full py-2 bg-blue-50 border-y border-blue-100 text-xs font-bold text-blue-700 hover:bg-blue-100 transition-colors flex items-center justify-center gap-1.5 z-10 relative" onclick="toggleBrandDetails(this)">
+            Ver Estrategia
+            <svg class="w-3.5 h-3.5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div class="brand-details overflow-hidden transition-all duration-300 ease-in-out bg-white" style="max-height: 0px; opacity: 0;">
+            <div class="p-4 border-t border-blue-100">
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium mb-2.5">
+                <li>• Pizzas individuales sobre masa de coliflor rica en proteína.</li>
+                <li>• Bowls de pollo fortificados con hierro, fibra y vitaminas.</li>
+              </ul>
+              <div class="p-2.5 rounded bg-blue-50 border border-blue-100 text-[10px] text-blue-800 italic font-medium leading-snug">
+                "Porciones pequeñas con el 100% de la nutrición esencial, para el supermercado."
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="quadrant" class="py-8 px-4 lg:px-8 max-w-7xl mx-auto mb-6 bg-white">
+    <div class="mb-6 text-center max-w-3xl mx-auto">
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Matriz Estratégica de Posicionamiento</span>
+      <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Los 4 Arquetipos de Adaptación QSR</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Arquetipo 1 -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 border-l-4 border-l-brand-500 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Arquetipo 1</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-50 text-brand-700">Doble Propósito</span>
+        </div>
+        <h4 class="text-lg font-black text-slate-900">Fitness & GLP-1 Crossover (Dual)</h4>
+        <p class="text-[11px] text-slate-600 mt-1.5 font-medium leading-snug">
+          <strong>Líderes:</strong> Chipotle, Sweetgreen, CAVA.<br>
+          <strong>Narrativa:</strong> Vender <em>"High Protein"</em>. Atrae al usuario médico y al comensal de gimnasio simultáneamente.
+        </p>
+      </div>
+
+      <!-- Arquetipo 2 -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 border-l-4 border-l-purple-500 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Arquetipo 2</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-50 text-purple-700">Explícito / Clínico</span>
+        </div>
+        <h4 class="text-lg font-black text-slate-900">Menú Declarado "GLP-1 Support"</h4>
+        <p class="text-[11px] text-slate-600 mt-1.5 font-medium leading-snug">
+          <strong>Líderes:</strong> Smoothie King, Nestlé Vital Pursuit.<br>
+          <strong>Narrativa:</strong> Nombrar directamente al fármaco. Para el sector que busca aval nutricional (0g azúcar).
+        </p>
+      </div>
+
+      <!-- Arquetipo 3 -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 border-l-4 border-l-orange-500 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">Arquetipo 3</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-orange-50 text-orange-700">Reducción & Mini</span>
+        </div>
+        <h4 class="text-lg font-black text-slate-900">Downsizing & Bunless Hacks</h4>
+        <p class="text-[11px] text-slate-600 mt-1.5 font-medium leading-snug">
+          <strong>Líderes:</strong> McDonald's, Burger King, Shake Shack.<br>
+          <strong>Narrativa:</strong> Opciones mini (sliders) y pedidos "sin pan" para reducir volumen protegiendo el ticket.
+        </p>
+      </div>
+
+      <!-- Arquetipo 4 -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 border-l-4 border-l-cyan-500 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-cyan-600 uppercase tracking-wider">Arquetipo 4</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-50 text-cyan-700">Bebidas Funcionales</span>
+        </div>
+        <h4 class="text-lg font-black text-slate-900">Protein-Infused Beverages</h4>
+        <p class="text-[11px] text-slate-600 mt-1.5 font-medium leading-snug">
+          <strong>Líderes:</strong> Juan Valdez, cadenas de specialty coffee.<br>
+          <strong>Narrativa:</strong> Integrar 20g+ de proteína en líquidos, sustituyendo sólidos pesados.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 px-4 lg:px-8 bg-white border-t border-slate-200 mt-4 text-center">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <div class="flex items-center justify-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+        <h5 class="text-xs font-black text-slate-900 tracking-wide uppercase">GLP-1 Market Intelligence • QSR Global Insights</h5>
+      </div>
+      <p class="text-[11px] text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
+        Infografía analítica basada en tendencias de adaptación de menús y estrategias corporativas ante el auge de tratamientos de pérdida de peso.
+      </p>
+      <div class="pt-2 text-[10px] text-slate-400 font-bold flex flex-wrap justify-center gap-4">
+        <span>© 2026 QSR Strategic Report</span>
+        <span>•</span>
+        <span>Análisis Industria Alimentaria</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll helper
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Toggle para Grid Cards
+    function toggleBrandDetails(btn) {
+      const details = btn.nextElementSibling;
+      const icon = btn.querySelector('svg');
+      
+      if (details.style.maxHeight && details.style.maxHeight !== "0px") {
+        // Cerrar
+        details.style.maxHeight = "0px";
+        details.style.opacity = "0";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        // Abrir
+        details.style.maxHeight = details.scrollHeight + "px";
+        details.style.opacity = "1";
+        icon.style.transform = "rotate(180deg)";
+      }
+    }
+  </script>
+</body>
+</html>
